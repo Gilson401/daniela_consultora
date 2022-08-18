@@ -31,13 +31,19 @@ function App() {
   }
 
   const styles = {
-    topnav:
-      'flex place-content-center  overflow-hidden py-4 bg-black text-white  space-x-10 w-full',
-    topnavlinks: 'cursor-pointer  text-2xl hover:text-gray-600',
+    topnav: () =>
+      `${
+        showMenu ? 'flex-col' : ''
+      } absolute md:flex place-content-end  md:place-content-center  bg-black text-white  md:space-x-10 w-full`,
+    topnavlinks: () =>
+      `${
+        showMenu ? 'my-2' : 'hidden'
+      }  md:flex w-full md:w-auto cursor-pointer  text-2xl hover:text-gray-600`,
   };
 
   const setComponenti = (componenti: ILinks): void => {
     setComponent(componenti);
+    setShowMenu(false);
   };
 
   useEffect(() => {
@@ -47,22 +53,28 @@ function App() {
   return (
     <div className="App">
       <Header title="hola" />
-      <div className="flex place-content-center w-full">
-        <div className={styles.topnav} id="myTopnav">
-          {links.map((link) => (
-            <button
-              type="button"
-              key={link.label}
-              onClick={() => setComponenti(link)}
-              className={`${styles.topnavlinks}`}
-            >
-              {link.label}
-            </button>
-          ))}
-
-          <button className="icon" onClick={myFunction}>
-            btn
+      <div className="relative flex place-content-center w-full">
+        <div className={styles.topnav()} id="myTopnav">
+          <button type="button" className="block float-right  md:hidden  mx-3" onClick={myFunction}>
+            <span className="text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="white">
+                <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
+              </svg>
+            </span>
           </button>
+
+          <div className={styles.topnav()}>
+            {links.map((link) => (
+              <button
+                type="button"
+                key={link.label}
+                onClick={() => setComponenti(link)}
+                className={`${styles.topnavlinks()}`}
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       <>{component?.component({})}</>
