@@ -34,7 +34,7 @@ function App() {
     topnav: () =>
       `${
         showMenu ? 'flex-col' : ''
-      } absolute md:flex place-content-end  md:place-content-center  bg-black text-white  md:space-x-10 w-full`,
+      } absolute md:flex place-content-end  md:place-content-center  bg-black text-white   w-full`,
     topnavlinks: () =>
       `${
         showMenu ? 'my-2' : 'hidden'
@@ -47,7 +47,7 @@ function App() {
   };
 
   useEffect(() => {
-    document.title = `Daniela ${component.label}`;
+    document.title = `Daniela Consultora Imagem e Estilo - ${component.label}`;
   }, [component]);
 
   return (
@@ -63,7 +63,7 @@ function App() {
             </span>
           </button>
 
-          <div className={styles.topnav()}>
+          <div className={styles.topnav() + ' md:space-x-10'}>
             {links.map((link) => (
               <button
                 type="button"
@@ -77,7 +77,10 @@ function App() {
           </div>
         </div>
       </div>
-      <>{component?.component({})}</>
+      <div className="w-full rounded-md p-20 bg-gray-500 text-white text-center text-3xl mt-10">
+        SITE EM CONSTRUÇÃO
+      </div>
+      <div className="mx-10">{component?.component({})}</div>
     </div>
   );
 }
