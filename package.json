@@ -1,20 +1,20 @@
 {
-  "name": "vite-react-ts",
+  "name": "daniela-consultora",
   "version": "0.0.0",
-  "description": "React Typescript Starter Template with Vite",
+  "description": "Daniela Nascimento Consultora de Imagem e Estilo",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uchihamalolan/vite-react-ts.git"
+    "url": "https://github.com/Gilson401/daniela_consultora"
   },
   "keywords": [
     "vite",
     "react",
-    "starter",
-    "template"
+    "tailwind",
+    "typescript"
   ],
-  "author": "Malolan B. <uchihamalolan@gmail.com> (https://twitter.com/malolan12)",
+  "author": "Gilson401. <dev.gpsc@gmail.com> (https://twitter.com/DeveloperGp)",
   "license": "MIT",
-  "homepage": "https://github.com/uchihamalolan/vite-react-ts",
+  "homepage": "https://daniela-consultora.netlify.app/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
