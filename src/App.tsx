@@ -8,25 +8,28 @@ import { Contato } from 'components/Contato';
 import { BioComponent } from 'components/Bio';
 import { Home } from 'components/Home';
 
+interface ILinks {
+  label: string;
+  component: React.FC;
+}
+const links: Array<ILinks> = [
+  { label: 'HOME', component: Home },
+  { label: 'BIO', component: BioComponent },
+  { label: 'CURSOS', component: Cursos },
+  { label: 'SERVIÇOS', component: Servicos },
+  { label: 'CLIENTES', component: Clientes },
+  { label: 'CONTATO', component: Contato },
+];
+
 function App() {
-  interface ILinks {
-    label: string;
-    component: React.FC;
-  }
-
-  const links: Array<ILinks> = [
-    { label: 'HOME', component: Home },
-    { label: 'BIO', component: BioComponent },
-    { label: 'CURSOS', component: Cursos },
-    { label: 'SERVIÇOS', component: Servicos },
-    { label: 'CLIENTES', component: Clientes },
-    { label: 'CONTATO', component: Contato },
-  ];
-
+  const [component, setComponent] = useState<ILinks>({ label: 'HOME', component: Home });
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [component, setComponent] = useState<ILinks>(links[5]);
 
-  function myFunction() {
+  useEffect(() => {
+    document.title = `Daniela Consultora Imagem e Estilo - ${component.label}`;
+  }, [component]);
+
+  function myFunction(): void {
     setShowMenu(!showMenu);
   }
 
@@ -42,13 +45,9 @@ function App() {
   };
 
   const setComponenti = (componenti: ILinks): void => {
-    setComponent(componenti);
     setShowMenu(false);
+    setComponent(componenti);
   };
-
-  useEffect(() => {
-    document.title = `Daniela Consultora Imagem e Estilo - ${component.label}`;
-  }, [component]);
 
   return (
     <div className="App">
@@ -80,7 +79,15 @@ function App() {
       <div className="w-full rounded-md p-20 bg-gray-500 text-white text-center text-3xl mt-10">
         SITE EM CONSTRUÇÃO
       </div>
-      <div className="mx-10">{component?.component({})}</div>
+
+      <div className="mx-10">
+        <>{component.label === 'HOME' ? <Home /> : ''}</>
+        <>{component.label === 'BIO' ? <BioComponent /> : ''}</>
+        <>{component.label === 'CURSOS' ? <Cursos /> : ''}</>
+        <>{component.label === 'SERVIÇOS' ? <Servicos /> : ''}</>
+        <>{component.label === 'CLIENTES' ? <Clientes /> : ''}</>
+        <>{component.label === 'CONTATO' ? <Contato /> : ''}</>
+      </div>
     </div>
   );
 }
