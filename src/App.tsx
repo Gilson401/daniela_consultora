@@ -62,7 +62,7 @@ function App() {
             </span>
           </button>
 
-          <div className={styles.topnav() + ' md:space-x-10'}>
+          <div className={styles.topnav() + ' md:space-x-10 z-10'}>
             {links.map((link) => (
               <button
                 type="button"
