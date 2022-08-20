@@ -24,7 +24,7 @@ function App() {
   ];
 
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [component, setComponent] = useState<ILinks>(links[1]);
+  const [component, setComponent] = useState<ILinks>(links[5]);
 
   function myFunction() {
     setShowMenu(!showMenu);

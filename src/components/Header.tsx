@@ -1,3 +1,5 @@
+import { BsFacebook, BsWhatsapp, BsYoutube, BsInstagram } from 'react-icons/bs';
+
 export function Header({ title }: { title: string }) {
   return (
     <div className="place-content-center bg-white text-center my-2">
@@ -12,26 +14,21 @@ export function Header({ title }: { title: string }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            src="https://julianalenz.com.br/wp-content/themes/lenz-wordpress/img/bface.png"
-            alt="TODO IMG youtube"
-          />
+          <BsYoutube />
         </a>
         <a href="https://www.instagram.com/daniela_consultora/" target="_blank" rel="noreferrer">
-          <img
-            src="https://julianalenz.com.br/wp-content/themes/lenz-wordpress/img/binsta.png"
-            alt="TODO"
-          />
+          <BsInstagram />
         </a>
         <a
-          href="https://api.whatsapp.com/send?phone=5521968062099"
+          href="https://api.whatsapp.com/send?phone=5521998522194"
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            src="https://julianalenz.com.br/wp-content/themes/lenz-wordpress/img/bwpp.png"
-            alt=""
-          />
+          <BsWhatsapp />
+        </a>
+
+        <a href="https://www.facebook.com/daniela.nascimento.357" target="_blank" rel="noreferrer">
+          <BsFacebook />
         </a>
       </div>
     </div>
