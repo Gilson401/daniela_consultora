@@ -14,15 +14,16 @@ export function Home() {
       <Carousel
         additionalTransfrom={0}
         arrows
-        autoPlaySpeed={3000}
+        autoPlay
+        autoPlaySpeed={5000}
         centerMode={false}
-        className=""
+        className="mx-auto"
         containerClass="container"
         dotListClass=""
         draggable
         focusOnSelect={false}
         infinite
-        itemClass=""
+        itemClass="justify-self-center"
         keyBoardControl
         minimumTouchDrag={80}
         pauseOnHover
@@ -61,16 +62,7 @@ export function Home() {
         slidesToSlide={1}
         swipeable
       >
-        <img
-          style={{
-            display: 'block',
-            height: '100%',
-            margin: 'auto',
-            width: '100%',
-          }}
-          src={Banner0}
-          alt="logo"
-        />
+        <img src={Banner0} alt="logo" />
 
         <img src={Banner1} alt="logo" />
 
