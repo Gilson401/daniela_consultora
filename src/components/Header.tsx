@@ -3,7 +3,7 @@ import { BsFacebook, BsWhatsapp, BsYoutube, BsInstagram } from 'react-icons/bs';
 export function Header({ title }: { title: string }) {
   return (
     <div className="place-content-center bg-white text-center my-2">
-      <a href="https://julianalenz.com.br/">
+      <a href="https://daniela-consultora.netlify.app/">
         <span className="text-2xl">Daniela Nascimento</span>
         <br />
         <span className="text-base">Consultora de Imagem e Estilo</span>
@@ -27,7 +27,7 @@ export function Header({ title }: { title: string }) {
           <BsWhatsapp />
         </a>
 
-        <a href="https://www.facebook.com/daniela.nascimento.357" target="_blank" rel="noreferrer">
+        <a href="https://www.facebook.com/dani.style.consultora" target="_blank" rel="noreferrer">
           <BsFacebook />
         </a>
       </div>
