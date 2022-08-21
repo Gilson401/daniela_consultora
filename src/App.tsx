@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from 'components/Header';
 
 import { Cursos } from 'components/Cursos';
@@ -8,25 +8,14 @@ import { Contato } from 'components/Contato';
 import { BioComponent } from 'components/Bio';
 import { Home } from 'components/Home';
 
-interface ILinks {
-  label: string;
-  component: React.FC;
-}
-const links: Array<ILinks> = [
-  { label: 'HOME', component: Home },
-  { label: 'BIO', component: BioComponent },
-  { label: 'CURSOS', component: Cursos },
-  { label: 'SERVIÇOS', component: Servicos },
-  { label: 'CLIENTES', component: Clientes },
-  { label: 'CONTATO', component: Contato },
-];
+const links = ['HOME', 'BIO', 'CURSOS', 'SERVIÇOS', 'CLIENTES', 'CONTATO'];
 
 function App() {
-  const [component, setComponent] = useState<ILinks>({ label: 'HOME', component: Home });
+  const [component, setComponent] = useState<string>('HOME');
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   useEffect(() => {
-    document.title = `Daniela Consultora Imagem e Estilo - ${component.label}`;
+    document.title = `Daniela Consultora Imagem e Estilo - ${component}`;
   }, [component]);
 
   function myFunction(): void {
@@ -44,7 +33,7 @@ function App() {
       }  md:flex w-full md:w-auto cursor-pointer  text-2xl hover:text-gray-600`,
   };
 
-  const setComponenti = (componenti: ILinks): void => {
+  const setComponenti = (componenti: string): void => {
     setShowMenu(false);
     setComponent(componenti);
   };
@@ -66,11 +55,11 @@ function App() {
             {links.map((link) => (
               <button
                 type="button"
-                key={link.label}
+                key={link}
                 onClick={() => setComponenti(link)}
                 className={`${styles.topnavlinks()}`}
               >
-                {link.label}
+                {link}
               </button>
             ))}
           </div>
@@ -80,13 +69,13 @@ function App() {
         SITE EM CONSTRUÇÃO
       </div>
 
-      <div className="mx-10">
-        <>{component.label === 'HOME' ? <Home /> : ''}</>
-        <>{component.label === 'BIO' ? <BioComponent /> : ''}</>
-        <>{component.label === 'CURSOS' ? <Cursos /> : ''}</>
-        <>{component.label === 'SERVIÇOS' ? <Servicos /> : ''}</>
-        <>{component.label === 'CLIENTES' ? <Clientes /> : ''}</>
-        <>{component.label === 'CONTATO' ? <Contato /> : ''}</>
+      <div className="mx-1   md:mx-10">
+        <>{component === 'HOME' ? <Home /> : ''}</>
+        <>{component === 'BIO' ? <BioComponent /> : ''}</>
+        <>{component === 'CURSOS' ? <Cursos /> : ''}</>
+        <>{component === 'SERVIÇOS' ? <Servicos /> : ''}</>
+        <>{component === 'CLIENTES' ? <Clientes /> : ''}</>
+        <>{component === 'CONTATO' ? <Contato /> : ''}</>
       </div>
     </div>
   );
