@@ -31,6 +31,7 @@ function App() {
       `${
         showMenu ? 'my-2' : 'hidden'
       }  md:flex w-full md:w-auto cursor-pointer  text-2xl hover:text-gray-600`,
+    selectedLink: (linke: string) => `${linke === component ? 'text-gray-600' : ''}`,
   };
 
   const setComponenti = (componenti: string): void => {
@@ -57,7 +58,7 @@ function App() {
                 type="button"
                 key={link}
                 onClick={() => setComponenti(link)}
-                className={`${styles.topnavlinks()}`}
+                className={`${styles.topnavlinks()} ${styles.selectedLink(link)}`}
               >
                 {link}
               </button>
