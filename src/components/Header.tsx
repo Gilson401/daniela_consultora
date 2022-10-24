@@ -16,7 +16,7 @@ export function Header({ title }: { title: string }) {
         >
           <BsYoutube />
         </a>
-        <a href="https://www.instagram.com/daniela_consultora/" target="_blank" rel="noreferrer">
+        <a href="https://www.instagram.com/dani.estiloeimagem/" target="_blank" rel="noreferrer">
           <BsInstagram />
         </a>
         <a
